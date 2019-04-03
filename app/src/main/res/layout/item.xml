@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable name="movie" type="com.example.macysproject.models.Movie"/>
     </data>
-<android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_height="wrap_content"
         android:padding="20dp">
+
+    <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvDisplayRecyclerMovie"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#abad00"
+            app:cardCornerRadius="3dp"
+            android:elevation="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintWidth_percent="0.9"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
 
     <ImageView
             android:id="@+id/ivMovie"
@@ -26,29 +43,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivMovie"/>
 
-    <!--<TextView-->
-            <!--android:id="@+id/tvReleaseDate"-->
-            <!--android:layout_width="wrap_content"-->
-              <!--android:layout_height="wrap_content"-->
-              <!--android:textSize="12sp"-->
-              <!--android:textStyle="italic"-->
-            <!--android:text="@{movie.release_date}"-->
-              <!--app:layout_constraintStart_toStartOf="parent"-->
-              <!--app:layout_constraintEnd_toEndOf="parent"-->
-              <!--app:layout_constraintTop_toBottomOf="@+id/tvMovieTitle"/>-->
-
-    <!--<TextView-->
-            <!--android:id="@+id/tvOverview"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:textSize="12sp"-->
-            <!--android:textStyle="italic"-->
-            <!--android:text="@{movie.overview}"-->
-            <!--app:layout_constraintStart_toStartOf="parent"-->
-            <!--app:layout_constraintEnd_toEndOf="parent"-->
-            <!--app:layout_constraintTop_toBottomOf="@+id/tvReleaseDate"/>-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 
-
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

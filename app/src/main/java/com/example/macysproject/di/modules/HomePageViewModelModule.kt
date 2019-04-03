@@ -1,6 +1,6 @@
 package com.example.macysproject.di.modules
 
-import android.arch.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProvider
 import com.example.macysproject.viewmodels.HomePageViewModel
 import com.example.macysproject.viewmodels.UniversalViewModelFactory
 import dagger.Module

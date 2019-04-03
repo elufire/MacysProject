@@ -1,8 +1,8 @@
 package com.example.macysproject.adapters
 
 import android.content.Intent
-import android.databinding.DataBindingUtil
-import android.support.v7.widget.RecyclerView
+import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +16,7 @@ import com.example.macysproject.models.Movie
 import java.util.ArrayList
 
 class RecyclerViewAdapter(private var movies: ArrayList<Movie>?)
-    : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>(){
+    : androidx.recyclerview.widget.RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewAdapter.ViewHolder {
 //        val inflatedView = parent.inflate(R.layout.item, false)
@@ -37,7 +37,7 @@ class RecyclerViewAdapter(private var movies: ArrayList<Movie>?)
 
     }
 
-    class ViewHolder(val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root), View.OnClickListener {
+    class ViewHolder(val binding: ItemBinding) : androidx.recyclerview.widget.RecyclerView.ViewHolder(binding.root), View.OnClickListener {
 //        private var view: View = v
 
         init {

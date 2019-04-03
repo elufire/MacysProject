@@ -1,13 +1,13 @@
 package com.example.macysproject.activities
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProvider
-import android.arch.lifecycle.ViewModelProviders
-import android.databinding.DataBindingUtil
-import android.support.v7.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
+import androidx.databinding.DataBindingUtil
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.widget.LinearLayout
 import com.example.macysproject.MacysApplication
@@ -32,9 +32,9 @@ class HomePageActivity : AppCompatActivity() {
 
     var moviesList: ArrayList<Movie>? = ArrayList()
 
-    private lateinit var scrollListener: RecyclerView.OnScrollListener
+    private lateinit var scrollListener: androidx.recyclerview.widget.RecyclerView.OnScrollListener
 
-    private lateinit var linearLayoutManager: LinearLayoutManager
+    private lateinit var linearLayoutManager: androidx.recyclerview.widget.LinearLayoutManager
 
     @Inject
     lateinit var viewModelFactory : ViewModelProvider.Factory
@@ -49,7 +49,7 @@ class HomePageActivity : AppCompatActivity() {
         DataBindingUtil.setContentView<ActivityHomePageBinding>(this, R.layout.activity_home_page)
             .apply { viewModel =  homeViewModel; setLifecycleOwner(this@HomePageActivity)}
 
-        linearLayoutManager = LinearLayoutManager(this)
+        linearLayoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         rvMovies.layoutManager = linearLayoutManager
         rvMovies.adapter = RecyclerViewAdapter(moviesList)
 
@@ -77,11 +77,11 @@ class HomePageActivity : AppCompatActivity() {
     private fun setRecyclerViewScrollListener() {
 
         Log.d("TAG", "setRecyclerViewScrollListener: $pageNumber")
-        scrollListener = object : RecyclerView.OnScrollListener() {
+        scrollListener = object : androidx.recyclerview.widget.RecyclerView.OnScrollListener() {
 
-            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+            override fun onScrollStateChanged(recyclerView: androidx.recyclerview.widget.RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
-                lastVisibleItemPosition = (recyclerView.layoutManager as LinearLayoutManager).findLastVisibleItemPosition()
+                lastVisibleItemPosition = (recyclerView.layoutManager as androidx.recyclerview.widget.LinearLayoutManager).findLastVisibleItemPosition()
                 val totalItemCount = recyclerView.layoutManager?.itemCount
                 Log.d("TAG", "ItemCount: $totalItemCount LastVisibleItem: $lastVisibleItemPosition")
                 if (totalItemCount == lastVisibleItemPosition +1) {

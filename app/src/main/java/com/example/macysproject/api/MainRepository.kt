@@ -1,6 +1,5 @@
 package com.example.macysproject.api
 
-import com.example.macysproject.Constants
 import com.example.macysproject.models.SearchResult
 import io.reactivex.Observable
 import javax.inject.Inject

@@ -1,9 +1,9 @@
 package com.example.macysproject.viewmodels
 
 import android.app.Application
-import android.arch.lifecycle.AndroidViewModel
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import android.util.Log
 import com.example.macysproject.MacysApplication
 import com.example.macysproject.api.MainRepository
@@ -29,7 +29,7 @@ class HomePageViewModel : AndroidViewModel(Application()){
     lateinit var mainRepository: MainRepository
 
     init {
-        MacysApplication().viewModelComponent.inject(this)
+        MacysApplication().macysComponent.inject(this)
         name.value = "Ricky"
         Log.d("TAG", "In init ViewModel" + name.value)
     }
